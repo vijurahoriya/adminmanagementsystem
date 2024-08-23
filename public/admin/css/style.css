@@ -1,0 +1,18 @@
+h2{
+    color:pink;
+}
+#login{
+    display: flex;
+    align-items: center;
+    height: 550px;
+}
+
+#header{
+    background-color: blue;
+}
+#header button{
+    float: right;
+}
+#footer{
+    background-color: rgb(98, 98, 162);
+}

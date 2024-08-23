@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/admin/css/style.css">
+</head>
+<body>
+   
+    <%- include('../../partials/admin/header.ejs') %>
+    <section id="mid">
+        <div class="container">
+            <div class="row">
+               <%- include('../../partials/admin/left.ejs')  %>
+                <div class="col-md-9">
+                    <h2>Query Reply</h2>
+                    <form action="/admin/queryrecord/<%=record.id%>" method="post" enctype="multipart/form-data">
+                        <label class="form-label" for="">To</label>
+                        <input type="text" name="emailto" class="form-control" value="<%=record.email%>" id="">
+                        <label class="form-label"  for="">Subject</label>
+                        <input type="text" name="emailsub"  class="form-control" value="Reply:<%=record.query%>" id="">
+                        <label class="form-label"  for="">Body</label>
+                        <textarea name="emailbody" class="form-control" id=""></textarea>
+                        <label class="form-label"  for="">Attachment</label>
+                        <input type="file" name="upload" class="form-control">
+                       
+                        <button type="submit" class="form-control btn btn-success my-2">Send Email</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../partials/admin/footer.ejs') %>
+</body>
+</html>
